@@ -1,0 +1,21 @@
+<section ng-controller="EmailsController">
+  <form ng-submit="createSigning()">
+    <input type="text" ng-model="newSigning.first_name" placeholder="FIRST NAME">
+    <input type="text" ng-model="newSigning.last_name" placeholder="LAST NAME">
+    <input type="text" ng-model="newSigning.email" placeholder="EMAIL">
+    <input type="text" ng-model="newSigning.address" placeholder="ADDRESS">
+    <input type="text" ng-model="newSigning.city" placeholder="CITY">
+    <input type="text" ng-model="newSigning.state" placeholder="STATE">
+    <input type="text" ng-model="newSigning.zip" placeholder="ZIP">
+    <input type="submit">
+  </form>
+  <div ng-repeat="signing in signings">
+    <p>First Name: {{ signing.first_name }}</p>
+    <p>Last Name: {{ signing.last_name }}</p>
+    <p>Email: {{ signing.email }}</p>
+    <p>Address: {{ signing.address }}</p>
+    <p>City: {{ signing.city }}</p>
+    <p>State: {{ signing.state }}</p>
+    <p>ZIP: {{ signing.zip }}</p>
+  </div>
+</section>
