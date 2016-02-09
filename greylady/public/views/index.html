@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js" charset="utf-8"></script>
@@ -23,7 +23,10 @@
       <input ui-date ng-model="dateTo" type="text" id="date-to" placeholder="Date To">
       <input type="button" name="Submit" value="Submit" ng-click="getNews()">
       <ul>
-        <li ng-repeat="snippet in snippets" ng-click="renderSnippet()">
+        <li ng-repeat="doc in docs">
+          <p>
+            {{ doc.snippet }}
+          </p>
         </li>
       </ul>
 

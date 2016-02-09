@@ -1,23 +1,35 @@
 var ctrl = angular.module('snippetsController', ['snippetsApiFactory']);
-ctrl.controller('snippetsController', ['$scope', '$snippetsApi', '$http', function($scope, $snippetsApi, $http){
+ctrl.controller('snippetsController', ['$scope', 'snippetsApi', '$http', '$window', function($scope, snippetsApi, $http, $window){
 
-  console.log("houston we don't have a problem");
+  // Workaround to get Angular's $http.jsonp to play nice with the NYTimes API.
+  // http://stackoverflow.com/questions/19375033/using-angularjs-jsonp-when-callback-cant-be-defined
+  $window.svc_search_v2_articlesearch = function(apiResponse) {
+    var docs = apiResponse.response.docs;
+    $scope.docs = docs;
+  };
 
-  var baseUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=' + $scope.dateFrom + '&end_date=' + $scope.dateTo + '&sort=newest&hl=true&api-key=';
-  var myKey = '62bd71e38ae6689ade861f7d1976e48f:6:74251473';
-  var superKey = baseUrl + myKey;
+  $scope.docs = [];
+  function Date.Prototype.dateToYMD(date) {
+      var d = date.getDate();
+      var m = date.getMonth() + 1;
+      var y = date.getFullYear();
+      return  y + (m<=9 ? '0' + m : m) +  (d <= 9 ? '0' + d : d);
+  }
+$scope.getNews = function() {
 
-  $scope.snippets = [];
+    var fromDate = $scope.dateFrom.dateToYMD();
+    var toDate = $scope.dateTo.dateToYMD();
+    debugger
+    snippetsApi.getAllSnippets( fromDate, toDate ).then(function( data ){
+      console.log(data);
+    });
 
-  $scope.getNews = function() {
-    console.log($scope.dateFrom);
-    console.log($scope.dateTo);
   }
 
   function renderSnippet(){
     $http.get(superKey).then(function(response){
-      var data = response.data
-      $scope.snippets = data;
+      var data = response.data;
+      $scope.docs = data;
       console.log(response);
     })
   };
