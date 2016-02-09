@@ -1,0 +1,52 @@
+body{
+  margin: 0;
+  background-color: rgb(167,173,186);
+}
+
+form input{
+  border-radius: 12px;
+  border: 1px solid lightgrey;
+  font-family: FontAwesome;
+}
+
+header #banner{
+  width: 100%;
+  background-color: rgb(254,254,254);
+  border-bottom: 1px solid rgb(230,230,230);
+  text-align:center;
+}
+
+header #logo{
+  color: rgb(8,65,116);
+  font-family: 'Dancing Script', cursive;
+  display: inline-block;
+  margin: 0 2em;
+}
+
+header #logo::first-letter{
+  font-family: 'Cookie', cursive;
+}
+
+header form{
+  display: inline-block;
+  margin: 0 2em;
+}
+
+.content-block{
+  background-color: rgb(253,253,253);
+  border: 1px solid rgb(230,230,230);
+  margin: 3em auto;
+  padding: 3em;
+  width: 500px;  /* We should make this responsive*/
+  border-radius: 25px;
+}
+
+
+
+.haiku .username{
+  border-bottom: 1px solid rgb(230,230,230);
+}
+
+.haiku .comment{
+  text-align: right;
+}

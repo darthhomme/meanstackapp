@@ -1,4 +1,4 @@
-<section ng-controller="EmailsController">
+<section id="the-form" ng-controller="EmailsController">
   <form ng-submit="createSigning()">
     <input type="text" ng-model="newSigning.first_name" placeholder="FIRST NAME">
     <input type="text" ng-model="newSigning.last_name" placeholder="LAST NAME">
@@ -9,13 +9,10 @@
     <input type="text" ng-model="newSigning.zip" placeholder="ZIP">
     <input type="submit">
   </form>
-  <div ng-repeat="signing in signings">
+  <!-- <div ng-repeat="signing in signings">
     <p>First Name: {{ signing.first_name }}</p>
     <p>Last Name: {{ signing.last_name }}</p>
     <p>Email: {{ signing.email }}</p>
-    <p>Address: {{ signing.address }}</p>
-    <p>City: {{ signing.city }}</p>
-    <p>State: {{ signing.state }}</p>
-    <p>ZIP: {{ signing.zip }}</p>
-  </div>
+    <button class="delete-button" ng-click="deleteSigning(signing.id)">DELETE</button>
+  </div> -->
 </section>

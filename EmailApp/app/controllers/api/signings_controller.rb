@@ -9,10 +9,12 @@ class Api::SigningsController < ApplicationController
     render json: new_signing
   end
 
-  private
-
-  def delete
+  def destroy
+    Signing.delete(params[:id])
+    head :no_content
   end
+
+  private
 
   def signing_params
     params.require(:signing).permit(:first_name, :last_name, :email, :address, :city, :state, :zip)

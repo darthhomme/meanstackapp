@@ -1,0 +1,11 @@
+body{
+  font-family: 'Lobster', Helvetica, sans-serif;
+  color: #4fa1c2;
+  background-color: #ffffff;
+}
+nav{
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

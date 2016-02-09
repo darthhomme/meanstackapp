@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-
+  delete 'index/:id' => 'welcome#index'
+  delete 'api/signings/:id' => 'api/signings#destroy'
+# DELETE /index/:id(.:format)             welcome#index
+# DELETE /api/signings/:id(.:format)      api/signings#destroy
   namespace :api do
     resources :signings
   end
