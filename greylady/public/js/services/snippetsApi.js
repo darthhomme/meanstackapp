@@ -3,8 +3,6 @@ api.factory('$snippetsApi', ['$http', function($http){
 
   console.log("hello");
 
-  var searchResult = {};
-  var searchField = $('#search-result').val();
   var baseUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20160107&end_date=20160108&sort=newest&hl=true&api-key=';
   var myKey = '62bd71e38ae6689ade861f7d1976e48f:6:74251473'
   var superKey = baseUrl + myKey;

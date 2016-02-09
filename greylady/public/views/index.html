@@ -19,7 +19,8 @@
       <h2 class="grey-lady">Welcome to the Grey Lady</h2>
     </nav>
     <div class="content" ng-controller="snippetsController">
-      <input ui-date ng-model="dateFrom" type="text" id="search-result" placeholder="Enter date">
+      <input ui-date ng-model="dateFrom" type="text" id="date-from" placeholder="Date From">
+      <input ui-date ng-model="dateTo" type="text" id="date-to" placeholder="Date To">
       <input type="button" name="Submit" value="Submit" ng-click="getNews()">
       <ul>
         <li ng-repeat="snippet in snippets" ng-click="renderSnippet()">
