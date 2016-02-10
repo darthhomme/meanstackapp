@@ -39,3 +39,8 @@ $scope.getNews = function() {
   }
 
 }]);
+
+// $(function(e){
+//   e.val('#date-from', '#date-to');
+//   $('.get-news-button').click();
+// })
