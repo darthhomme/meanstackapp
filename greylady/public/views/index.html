@@ -18,18 +18,18 @@
     <nav>
       <h2 class="grey-lady">Welcome to the Grey Lady</h2>
     </nav>
-    <div class="content" ng-controller="snippetsController">
+    <div class="content-contaner" ng-controller="snippetsController">
       <input ui-date ng-model="dateFrom" type="text" id="date-from" placeholder="Date From">
       <input ui-date ng-model="dateTo" type="text" id="date-to" placeholder="Date To">
       <input type="button" name="Submit" value="Submit" ng-click="getNews()">
-      <ul>
-        <li ng-repeat="doc in docs">
-          <p>
-            {{ doc.snippet }}
-          </p>
-        </li>
-      </ul>
-
+      <div id="content">
+        <ul>
+          <li ng-repeat="doc in docs">
+            <p>
+              {{ doc.snippet }}
+            </p>
+          </li>
+      </div>
     </div>
   </body>
 </html>
