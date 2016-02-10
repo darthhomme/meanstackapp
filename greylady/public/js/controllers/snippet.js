@@ -5,12 +5,9 @@ Date.prototype.dateToYMD = function() {
     return  y + (m<=9 ? '0' + m : m) +  (d <= 9 ? '0' + d : d);
 }
 
-
 var ctrl = angular.module('snippetsController', ['snippetsApiFactory']);
 ctrl.controller('snippetsController', ['$scope', 'snippetsApi', '$http', '$window', function($scope, snippetsApi, $http, $window){
 
-  // Workaround to get Angular's $http.jsonp to play nice with the NYTimes API.
-  // http://stackoverflow.com/questions/19375033/using-angularjs-jsonp-when-callback-cant-be-defined
   $window.svc_search_v2_articlesearch = function(apiResponse) {
     var docs = apiResponse.response.docs;
     $scope.docs = docs;
