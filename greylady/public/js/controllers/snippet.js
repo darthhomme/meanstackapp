@@ -34,13 +34,8 @@ $scope.getNews = function() {
     })
   };
 
-  function deleteSnippet(){
-    $http.delete()
-  }
+  // function deleteSnippet(){
+  //   $http.delete()
+  // }
 
 }]);
-
-// $(function(e){
-//   e.val('#date-from', '#date-to');
-//   $('.get-news-button').click();
-// })
